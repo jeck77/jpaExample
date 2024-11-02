@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.ArrayList;
 
 @Entity
 public class Member {
@@ -17,6 +19,12 @@ public class Member {
     private String city;
     private String street;
     private String zipcode;
+
+    /**
+     * 양방향
+     */
+    @OneToMany(mappedBy = "member")
+    private ArrayList<Order> orders = new ArrayList<>();
 
     public Long getId() {
         return id;
