@@ -9,7 +9,7 @@ import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 
 @Entity
-public class Member {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
